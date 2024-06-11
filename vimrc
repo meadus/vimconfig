@@ -1,5 +1,6 @@
 syntax on
 
+set termguicolors
 set background=dark
 colorscheme gruvbox
 
@@ -47,3 +48,5 @@ vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>`>ll
 nnoremap H 0
 nnoremap L $
 inoremap jk <esc>
+nnoremap <leader>z ZZ
+nnoremap <leader>w :w<cr>
