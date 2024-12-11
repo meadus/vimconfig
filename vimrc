@@ -1,3 +1,17 @@
+" Essential settings
+"set nocompatible              " Disable compatibility with old Vi
+filetype off                  " Disable filetype plugins temporarily
+
+call plug#begin('~/.vim/plugged')
+
+" List your plugins here
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+" Re-enable filetype detection after plugins are loaded
+filetype plugin indent on
+
 syntax on
 
 set termguicolors
@@ -8,6 +22,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set autoindent
+set backspace=indent,eol,start
 
 set number
 set relativenumber
@@ -29,14 +44,15 @@ let maplocalleader = "\\"
 "capitalize a word
 nnoremap <leader>u viwU
 
-"Move between split windows with the leader
-nnoremap <leader>k <c-w>k
-nnoremap <leader>j <c-w>j
-nnoremap <leader>l <c-w>l
-nnoremap <leader>h <c-w>h
+"Cycle between windows.
+nnoremap <Tab> <c-w>w
+
+" Normal mode: Switch between buffers 
+nnoremap <leader>b :bnext<CR>
+nnoremap <leader>B :bprevious<CR>
 
 "Edit the .vimrc more easily (quick open and quick reload)
-nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 "abbreviations are best for text replacement and won't trigger within another word
@@ -50,3 +66,9 @@ nnoremap L $
 inoremap jk <esc>
 nnoremap <leader>z ZZ
 nnoremap <leader>w :w<cr>
+nnoremap <leader>qq :q!<cr>
+
+"Open Explorer...
+nnoremap <leader>ee :Lex<cr>
+noremap <leader>w :w<cr>
+
