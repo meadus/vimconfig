@@ -1,5 +1,5 @@
 " Essential settings
-"set nocompatible              " Disable compatibility with old Vi
+set nocompatible              " Disable compatibility with old Vi
 filetype off                  " Disable filetype plugins temporarily
 
 call plug#begin('~/.vim/plugged')
