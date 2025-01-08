@@ -1,12 +1,10 @@
 " Essential settings
-"set nocompatible              " Disable compatibility with old Vi
+set nocompatible              " Disable compatibility with old Vi
 filetype off                  " Disable filetype plugins temporarily
 
 call plug#begin('~/.vim/plugged')
-
-" List your plugins here
 Plug 'tpope/vim-fugitive'
-
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 " Re-enable filetype detection after plugins are loaded
@@ -35,7 +33,7 @@ set wildmenu
 set splitbelow
 set splitright
 
-let mapleader = "-"
+let mapleader = " "
 let maplocalleader = "\\"
 
 "Notes:
@@ -66,27 +64,26 @@ nnoremap L $
 inoremap jk <esc>
 nnoremap <leader>z ZZ
 nnoremap <leader>w :w<cr>
-nnoremap <leader>qq :q!<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>fq :q!<cr>
 
-"Open Explorer...
-nnoremap <leader>ee :Lex<cr>
-noremap <leader>w :w<cr>
+"CtrlP Fuzzy File Finder
+nnoremap <leader>p :CtrlP<cr>
 
-"Git (fugitive) 
-nnoremap <leader>gs :G status<CR>         " Git status
-nnoremap <leader>gd :Gdiffsplit<CR>      " Git diff
-nnoremap <leader>gb :G blame<CR>          " Git blame
-nnoremap <leader>gl :G log<CR>            " Git log
-nnoremap <leader>gc :G commit<CR>         " Git commit
-nnoremap <leader>gp :G push<CR>           " Git push
-nnoremap <leader>gu :G pull<CR>           " Git pull
-nnoremap <leader>gw :G write<CR>          " Stage current file
-nnoremap <leader>gr :G read<CR>           " Unstage current file (reset changes)
-nnoremap <leader>gbc :Git branch<CR>     " Show branches
-nnoremap <leader>gch :Git checkout<Space> " Checkout a branch
-nnoremap <leader>gm :G merge<CR>          " Resolve merge conflicts
-nnoremap <leader>go :G edit<Space>        " Open file from another branch/commit
-nnoremap <leader>gcb :Gdiffsplit HEAD..<CR> " Compare current branch with upstream
-nnoremap <leader>gh :nohlsearch<CR>      " Clear search highlights
-nnoremap <leader>gq :G close<CR>          " Close Fugitive windows
+"Gitatus fugitive 
+nnoremap <leader>gs :G<space>status<CR> 
+nnoremap <leader>gd :Gdiffsplit<CR>    
+nnoremap <leader>gb :G<space>blame<CR> 
+nnoremap <leader>gl :G<space>log<CR>  
+nnoremap <leader>gc :G<space>commit<CR>
+"nnoremap <leader>gp :Gpush<CR>           " Git push
+"nnoremap <leader>gu :Gpull<CR>           " Git pull
+"nnoremap <leader>gw :Gwrite<CR>          " Stage current file
+"nnoremap <leader>gr :Gread<CR>           " Unstage current file (reset changes)
+"nnoremap <leader>gbc :Git branch<CR>     " Show branches
+"nnoremap <leader>gch :Git checkout<Space> " Checkout a branch
+"nnoremap <leader>gm :Gmerge<CR>          " Resolve merge conflicts
+"nnoremap <leader>go :Gedit<Space>        " Open file from another branch/commit
+"nnoremap <leader>gcb :Gdiffsplit HEAD..<CR> " Compare current branch with upstream
+"nnoremap <leader>gh :nohlsearch<CR>      " Clear search highlights
 
